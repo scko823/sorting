@@ -31,3 +31,16 @@ function bubbleSort(array){
 	}
 	return array
 }
+
+//insertion sort
+function insertionSort(array){
+	for (let i =1; i<array.length;i++){
+		for (let j=0;j<i;j++){
+			if (array[i]<array[j]){
+				let toBeInserted = array.splice(i,1)
+				array.splice(j,0, toBeInserted[0])
+			}
+		}
+	}
+	return array
+}
