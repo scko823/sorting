@@ -44,3 +44,16 @@ function insertionSort(array){
 	}
 	return array
 }
+
+//quick sort
+function quickSort(array){
+	if (array.length<2){
+		return array
+	}
+	let pivot = array.splice(array.length-1, 1)[0]
+	let smaller=[], bigger=[]
+	array.forEach(ele=>{
+		ele<=pivot? smaller.push(ele):bigger.push(ele)
+	})
+	return [].concat(quickSort(smaller), [pivot], quickSort(bigger))
+}
